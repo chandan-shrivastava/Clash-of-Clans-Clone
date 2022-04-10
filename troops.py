@@ -8,7 +8,10 @@ class Troops:
         self.x = 0
         self.y = 0
     def spawn(self,inp):
-        if inp == "i":
+        gs.BARBARIAN_COUNT = gs.BARBARIAN_COUNT + 1
+        if gs.BARBARIAN_COUNT >= 5:
+            pass
+        elif inp == "i":
             gs.troops_pos.append([11,45])
             gs.board[11][45] = Fore.WHITE + "B"
             self.x = 11

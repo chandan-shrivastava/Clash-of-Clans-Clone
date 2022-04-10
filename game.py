@@ -27,6 +27,12 @@ base.hut(2, "GREEN")
 base.hut(3, "GREEN")
 base.hut(4, "GREEN")
 base.hut(5, "GREEN")
+base.wizard_tower(1, "GREEN")
+base.wizard_tower(2, "GREEN")
+base.wizard_tower(3, "GREEN")
+base.wizard_tower(4, "GREEN")
+
+
 base.spawn_point()
 base.boundary()
 king.update()
@@ -59,7 +65,6 @@ for i in range(1000):
         break
 
 while True:
-    # cannon.2attack()
     inp = input_to(Get())
     health.check_health()
     cannon.attack()

@@ -19,10 +19,6 @@ class Health:
             current_health = ' ' * int((1000 - int(gs.KING_HEALTH))/int(100))
             remaining_health = ' ' * int(int(gs.KING_HEALTH)/int(100))
             gs.board[0][0]="King's Health : |" + Back.GREEN + remaining_health + Back.RED + current_health + Back.RESET + "|"
-            ind = 0
-            for i in gs.troopss:
-                gs.board[ind][0] = Fore.WHITE + "T" + str(i.health)
-                ind += 1
         if gs.king_destroyed == 1:
             gs.troop_alive=gs.troop_alive-1
             gs.king_destroyed += 1

@@ -13,6 +13,10 @@ BARBARIAN_ATTACK=20
 CANNON_ATTACK=30
 CANNON1_HEALTH=100
 CANNON2_HEALTH=100
+
+WIZARD_ATTACK=30
+WIZARD_HEALTH=[100,100,100,100]
+
 troops_pos=[]
 troopss = []
 buildings_pos=[]
@@ -36,3 +40,8 @@ hut_destroyed3 = 0
 hut_destroyed4 = 0
 hut_destroyed5 = 0
 king_destroyed = 0
+
+
+BARBARIAN_COUNT = 0
+ARCHER_COUNT = 0
+BALLOON_COUNT = 0
