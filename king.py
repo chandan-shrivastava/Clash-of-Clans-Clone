@@ -77,7 +77,23 @@ class King:
         if gs.building[x - 1][y] != " " and gs.KING_HEALTH>=0:
             os.system('aplay -q ./sounds/sword.wav& 2>/dev/null')
             building_targeted = gs.building[x - 1][y]
-            if building_targeted == "CANNON1":
+            if building_targeted == "WIZARD1":
+                gs.WIZARD1_HEALTH = gs.WIZARD1_HEALTH - gs.KING_ATTACK
+                if gs.WIZARD1_HEALTH < 0:
+                    gs.buildings_pos.remove(gs.wizard1_cord)
+            elif building_targeted == "WIZARD2":
+                gs.WIZARD2_HEALTH = gs.WIZARD2_HEALTH - gs.KING_ATTACK
+                if gs.WIZARD2_HEALTH < 0:
+                    gs.buildings_pos.remove(gs.wizard2_cord)
+            elif building_targeted == "WIZARD2":
+                gs.WIZARD2_HEALTH = gs.WIZARD2_HEALTH - gs.KING_ATTACK
+                if gs.WIZARD2_HEALTH < 0:
+                    gs.buildings_pos.remove(gs.wizard2_cord)
+            elif building_targeted == "WIZARD4":
+                gs.WIZARD4_HEALTH = gs.WIZARD4_HEALTH - gs.KING_ATTACK
+                if gs.WIZARD4_HEALTH < 0:
+                    gs.buildings_pos.remove(gs.wizard4_cord)
+            elif building_targeted == "CANNON1":
                 gs.CANNON1_HEALTH = gs.CANNON1_HEALTH - gs.KING_ATTACK
                 if gs.CANNON1_HEALTH < 0:
                     gs.buildings_pos.remove(gs.cannon1_cord)

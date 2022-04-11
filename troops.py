@@ -42,6 +42,10 @@ class Troops:
                         gs.CANNON1_HEALTH = gs.CANNON1_HEALTH - self.attack
                     elif gs.building[destination[0]][destination[1]] == "CANNON2":
                         gs.CANNON2_HEALTH = gs.CANNON2_HEALTH - self.attack
+                    elif gs.building[destination[0]][destination[1]] == "CANNON3":
+                        gs.CANNON3_HEALTH = gs.CANNON3_HEALTH - self.attack
+                    elif gs.building[destination[0]][destination[1]] == "CANNON4":
+                        gs.CANNON4_HEALTH = gs.CANNON4_HEALTH - self.attack
                     elif gs.building[destination[0]][destination[1]] == "HUTS1":
                         gs.HUT_HEALTH[0] = gs.HUT_HEALTH[0] - self.attack
                     elif gs.building[destination[0]][destination[1]] == "HUTS2":
@@ -54,6 +58,15 @@ class Troops:
                         gs.HUT_HEALTH[4] = gs.HUT_HEALTH[4] - self.attack
                     elif gs.building[destination[0]][destination[1]] == "TH":
                         gs.TH_HEALTH = gs.TH_HEALTH - self.attack
+
+                    elif gs.building[destination[0]][destination[1]] == "WIZARD1":
+                        gs.WIZARD_HEALTH[0] = gs.WIZARD_HEALTH[0] - self.attack
+                    elif gs.building[destination[0]][destination[1]] == "WIZARD2":
+                        gs.WIZARD_HEALTH[1] = gs.WIZARD_HEALTH[1] - self.attack
+                    elif gs.building[destination[0]][destination[1]] == "WIZARD3":
+                        gs.WIZARD_HEALTH[2] = gs.WIZARD_HEALTH[2] - self.attack
+                    elif gs.building[destination[0]][destination[1]] == "WIZARD4":
+                        gs.WIZARD_HEALTH[3] = gs.WIZARD_HEALTH[3] - self.attack
                     
                 else:
                     gs.board[trp[0]][trp[1]] = Fore.WHITE + " "

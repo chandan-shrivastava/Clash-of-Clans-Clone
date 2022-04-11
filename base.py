@@ -69,6 +69,24 @@ class Base:
                 gs.building[24][71] = "CANNON2"
                 gs.building[24][70] = "CANNON2"
                 gs.building[25][70] = "CANNON2"
+            if no == 3:
+                gs.board[17][51] = Fore.RED + "C"
+                gs.board[18][51] = Fore.RED + "C"
+                gs.board[18][50] = Fore.RED + "C"
+                gs.board[17][50] = Fore.RED + "C"
+                gs.building[17][51] = "CANNON3"
+                gs.building[18][51] = "CANNON3"
+                gs.building[18][50] = "CANNON3"
+                gs.building[17][50] = "CANNON3"
+            if no == 4:
+                gs.board[35][56] = Fore.RED + "C"
+                gs.board[34][56] = Fore.RED + "C"
+                gs.board[34][55] = Fore.RED + "C"
+                gs.board[35][55] = Fore.RED + "C"
+                gs.building[35][56] = "CANNON4"
+                gs.building[34][56] = "CANNON4"
+                gs.building[34][55] = "CANNON4"
+                gs.building[35][55] = "CANNON4"
 
         if color == "YELLOW":
             if no == 1:
@@ -89,6 +107,24 @@ class Base:
                 gs.building[24][71] = "CANNON2"
                 gs.building[24][70] = "CANNON2"
                 gs.building[25][70] = "CANNON2"
+            if no == 3:
+                gs.board[17][51] = Fore.YELLOW + "C"
+                gs.board[18][51] = Fore.YELLOW + "C"
+                gs.board[18][50] = Fore.YELLOW + "C"
+                gs.board[17][50] = Fore.YELLOW + "C"
+                gs.building[17][51] = "CANNON3"
+                gs.building[18][51] = "CANNON3"
+                gs.building[18][50] = "CANNON3"
+                gs.building[17][50] = "CANNON3"
+            if no == 4:
+                gs.board[35][56] = Fore.YELLOW + "C"
+                gs.board[34][56] = Fore.YELLOW + "C"
+                gs.board[34][55] = Fore.YELLOW + "C"
+                gs.board[35][55] = Fore.YELLOW + "C"
+                gs.building[35][56] = "CANNON4"
+                gs.building[34][56] = "CANNON4"
+                gs.building[34][55] = "CANNON4"
+                gs.building[35][55] = "CANNON4"
 
         if color == "GREEN":
             if no == 1:
@@ -109,6 +145,24 @@ class Base:
                 gs.building[24][71] = "CANNON2"
                 gs.building[24][70] = "CANNON2"
                 gs.building[25][70] = "CANNON2"
+            if no == 3:
+                gs.board[17][51] = Fore.GREEN + "C"
+                gs.board[18][51] = Fore.GREEN + "C"
+                gs.board[18][50] = Fore.GREEN + "C"
+                gs.board[17][50] = Fore.GREEN + "C"
+                gs.building[17][51] = "CANNON3"
+                gs.building[18][51] = "CANNON3"
+                gs.building[18][50] = "CANNON3"
+                gs.building[17][50] = "CANNON3"
+            if no == 4:
+                gs.board[35][56] = Fore.GREEN + "C"
+                gs.board[34][56] = Fore.GREEN + "C"
+                gs.board[34][55] = Fore.GREEN + "C"
+                gs.board[35][55] = Fore.GREEN + "C"
+                gs.building[35][56] = "CANNON4"
+                gs.building[34][56] = "CANNON4"
+                gs.building[34][55] = "CANNON4"
+                gs.building[35][55] = "CANNON4"
 
         if color == "RESET":
             if no == 1:
@@ -129,6 +183,24 @@ class Base:
                 gs.building[24][71] = " "
                 gs.building[24][70] = " "
                 gs.building[25][70] = " "
+            if no == 3:
+                gs.board[17][51] = " "
+                gs.board[18][51] = " "
+                gs.board[18][50] = " "
+                gs.board[17][50] = " "
+                gs.building[17][51] = " "
+                gs.building[18][51] = " "
+                gs.building[18][50] = " "
+                gs.building[17][50] = " "
+            if no == 4:
+                gs.board[35][56] = " "
+                gs.board[34][56] = " "
+                gs.board[34][55] = " "
+                gs.board[35][55] = " "
+                gs.building[35][56] = " "
+                gs.building[34][56] = " "
+                gs.building[34][55] = " "
+                gs.building[35][55] = " "
 
     def hut(self, no, color):
         if color == "RED":

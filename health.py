@@ -60,6 +60,33 @@ class Health:
             base.cannon(2, "RED")
         if gs.CANNON2_HEALTH > 30 and gs.CANNON2_HEALTH <= 60:
             base.cannon(2, "YELLOW")
+        
+        if gs.CANNON3_HEALTH <= 0:
+            base.cannon(3, "RESET")
+            gs.cannon3_destroyed += 1
+            if gs.cannon3_cord in gs.buildings_pos:
+                gs.buildings_pos.remove(gs.cannon3_cord)
+        if gs.cannon3_destroyed == 1:
+            gs.building_alive=gs.building_alive-1
+            gs.cannon3_destroyed += 1
+        if gs.CANNON3_HEALTH <= 30 and gs.CANNON3_HEALTH > 0:
+            base.cannon(3, "RED")
+        if gs.CANNON3_HEALTH > 30 and gs.CANNON3_HEALTH <= 60:
+            base.cannon(3, "YELLOW")
+        
+        if gs.CANNON4_HEALTH <= 0:
+            base.cannon(4, "RESET")
+            gs.cannon4_destroyed += 1
+            if gs.cannon4_cord in gs.buildings_pos:
+                gs.buildings_pos.remove(gs.cannon4_cord)
+        if gs.cannon4_destroyed == 1:
+            gs.building_alive=gs.building_alive-1
+            gs.cannon4_destroyed += 1
+        if gs.CANNON4_HEALTH <= 30 and gs.CANNON4_HEALTH > 0:
+            base.cannon(4, "RED")
+        if gs.CANNON4_HEALTH > 30 and gs.CANNON4_HEALTH <= 60:
+            base.cannon(4, "YELLOW")
+        
         for i in range(5):
             if gs.HUT_HEALTH[i] <= 0:
                 base.hut(i + 1, "RESET")
@@ -87,6 +114,44 @@ class Health:
                 base.hut(i + 1, "RED")
             if gs.HUT_HEALTH[i] > 30 and gs.HUT_HEALTH[i] <= 60:
                 base.hut(i + 1, "YELLOW")
+
+        for i in range(4):
+            if gs.WIZARD_HEALTH[i] <= 0:
+                base.wizard_tower(i + 1, "RESET")
+                if i == 0:
+                    gs.wiz_destroyed1 += 1
+                    if gs.wiz1_cord in gs.buildings_pos:
+                        gs.buildings_pos.remove(gs.wiz1_cord)
+                elif i == 1:
+                    gs.wiz_destroyed2 += 1
+                    if gs.wiz2_cord in gs.buildings_pos:
+                        gs.buildings_pos.remove(gs.wiz2_cord)
+                elif i == 2:
+                    gs.wiz_destroyed3 += 1
+                    if gs.wiz3_cord in gs.buildings_pos:
+                        gs.buildings_pos.remove(gs.wiz3_cord)
+                elif i == 3:
+                    gs.wiz_destroyed4 += 1
+                    if gs.wiz4_cord in gs.buildings_pos:
+                        gs.buildings_pos.remove(gs.wiz4_cord)
+            if gs.WIZARD_HEALTH[i] <= 30 and gs.WIZARD_HEALTH[i] > 0:
+                base.wizard_tower(i + 1, "RED")
+            if gs.WIZARD_HEALTH[i] > 30 and gs.WIZARD_HEALTH[i] <= 60:
+                base.wizard_tower(i + 1, "YELLOW")
+        if gs.wiz_destroyed1 == 1:
+            gs.building_alive=gs.building_alive-1
+            gs.wiz_destroyed1 += 1
+        if gs.wiz_destroyed2 == 1:
+            gs.building_alive=gs.building_alive-1
+            gs.wiz_destroyed2 += 1
+        if gs.wiz_destroyed3 == 1:
+            gs.building_alive=gs.building_alive-1
+            gs.wiz_destroyed3 += 1
+        if gs.wiz_destroyed4 == 1:
+            gs.building_alive=gs.building_alive-1
+            gs.wiz_destroyed4 += 1
+
+
         if gs.hut_destroyed1 == 1:
             gs.building_alive=gs.building_alive-1
             gs.hut_destroyed1 += 1
