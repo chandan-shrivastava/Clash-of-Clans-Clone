@@ -55,7 +55,7 @@ class Cannon:
                     # sleep(0.5)
                     gs.board[trp.x][trp.y] = Fore.WHITE + " "\
         
-        if gs.CANNON3_HEALTH > 0:
+        if gs.CANNON3_HEALTH > 0 and gs.level >= 2:
             x1=gs.cannon3_pos[0]
             x2=gs.cannon3_pos[1]
             y1=gs.king_pos[0]
@@ -80,7 +80,7 @@ class Cannon:
                     # sleep(0.5)
                     gs.board[trp.x][trp.y] = Fore.WHITE + " "
 
-        if gs.CANNON4_HEALTH > 0:
+        if gs.CANNON4_HEALTH > 0 and gs.level == 3:
             x1=gs.cannon4_pos[0]
             x2=gs.cannon4_pos[1]
             y1=gs.king_pos[0]

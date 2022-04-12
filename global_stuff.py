@@ -1,29 +1,36 @@
 building = [[" " for i in range(100)] for j in range(50)]
 board = [[" " for i in range(100)] for j in range(50)]
-king_pos=[25,26]
-cannon1_pos=[25,35]
-cannon2_pos=[25,71]
-cannon3_pos=[17,51]
-cannon4_pos=[35,56]
-TH_HEALTH=150
-KING_ATTACK=30
-KING_HEALTH=1000
-KING_SPEED=1
-HUT_HEALTH=[70,70,70,70,70]
-BARBARIAN_HEALTH=50
-BARBARIAN_ATTACK=20
-CANNON_ATTACK=30
-CANNON1_HEALTH=100
-CANNON2_HEALTH=100
-CANNON3_HEALTH=100
-CANNON4_HEALTH=100
+king_pos = [25, 26]
+cannon1_pos = [25, 35]
+cannon2_pos = [25, 71]
+cannon3_pos = [17, 51]
+cannon4_pos = [35, 56]
+wiz1_pos = [15, 63]
+wiz2_pos = [35, 61]
+wiz3_pos = [15, 44]
+wiz4_pos = [35, 41]
+hut1_pos = [15, 71]
+TH_HEALTH = 150
+KING_ATTACK = 30
+KING_HEALTH = 1000
+KING_SPEED = 1
+HUT_HEALTH = [70, 70, 70, 70, 70]
+BARBARIAN_HEALTH = 50
+BARBARIAN_ATTACK = 20
+CANNON_ATTACK = 30
+CANNON1_HEALTH = 100
+CANNON2_HEALTH = 100
+CANNON3_HEALTH = 100
+CANNON4_HEALTH = 100
 
-WIZARD_ATTACK=30
-WIZARD_HEALTH=[100,100,100,100]
+WIZARD_ATTACK = 30
+WIZARD_HEALTH = [100, 100, 100, 100]
 
-troops_pos=[]
+level = 3
+
+troops_pos = []
 troopss = []
-buildings_pos=[]
+buildings_pos = []
 town_hall_cord = []
 cannon1_cord = []
 cannon2_cord = []
@@ -38,8 +45,9 @@ wiz1_cord = []
 wiz2_cord = []
 wiz3_cord = []
 wiz4_cord = []
-troop_alive=1
-building_alive=8
+troop_alive = 1
+
+building_alive = 1
 
 th_destroyed = 0
 cannon1_destroyed = 0
@@ -61,5 +69,3 @@ king_destroyed = 0
 BARBARIAN_COUNT = 0
 ARCHER_COUNT = 0
 BALLOON_COUNT = 0
-
-level = 1
