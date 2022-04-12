@@ -26,7 +26,10 @@ CANNON4_HEALTH = 100
 WIZARD_ATTACK = 30
 WIZARD_HEALTH = [100, 100, 100, 100]
 
-level = 3
+level = 1
+runonce1 = 0
+runonce2 = 1
+runonce3 = 1
 
 troops_pos = []
 troopss = []

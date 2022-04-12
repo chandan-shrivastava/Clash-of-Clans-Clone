@@ -81,19 +81,19 @@ class King:
             if building_targeted == "WIZARD1":
                 gs.WIZARD_HEALTH[0] = gs.WIZARD_HEALTH[0] - gs.KING_ATTACK
                 if gs.WIZARD_HEALTH[0] < 0:
-                    gs.buildings_pos.remove(gs.wizard1_cord)
+                    gs.buildings_pos.remove(gs.wiz1_cord)
             elif building_targeted == "WIZARD2":
                 gs.WIZARD_HEALTH[1] = gs.WIZARD_HEALTH[1] - gs.KING_ATTACK
                 if gs.WIZARD_HEALTH[1] < 0:
-                    gs.buildings_pos.remove(gs.wizard2_cord)
+                    gs.buildings_pos.remove(gs.wiz2_cord)
             elif building_targeted == "WIZARD3":
                 gs.WIZARD_HEALTH[2] = gs.WIZARD_HEALTH[2] - gs.KING_ATTACK
                 if gs.WIZARD_HEALTH[2] < 0:
-                    gs.buildings_pos.remove(gs.wizard2_cord)
+                    gs.buildings_pos.remove(gs.wiz3_cord)
             elif building_targeted == "WIZARD4":
                 gs.WIZARD_HEALTH[3] = gs.WIZARD_HEALTH[3] - gs.KING_ATTACK
                 if gs.WIZARD_HEALTH[3] < 0:
-                    gs.buildings_pos.remove(gs.wizard4_cord)
+                    gs.buildings_pos.remove(gs.wiz4_cord)
             elif building_targeted == "CANNON1":
                 gs.CANNON1_HEALTH = gs.CANNON1_HEALTH - gs.KING_ATTACK
                 if gs.CANNON1_HEALTH < 0:
@@ -129,7 +129,7 @@ class King:
             elif building_targeted == "TH":
                 gs.TH_HEALTH = gs.TH_HEALTH - gs.KING_ATTACK
                 if gs.TH_HEALTH < 0:
-                    gs.buildings_pos.remove(gs.townhall_cord)
+                    gs.buildings_pos.remove(gs.town_hall_cord)
             elif building_targeted == "HUTS1":
                 gs.HUT_HEALTH[0] = gs.HUT_HEALTH[0] - gs.KING_ATTACK
                 if gs.HUT_HEALTH[0] < 0:
@@ -253,7 +253,7 @@ class King:
             elif building_targeted == "TH":
                 gs.TH_HEALTH = gs.TH_HEALTH - gs.KING_ATTACK
                 if gs.TH_HEALTH < 0:
-                    gs.buildings_pos.remove(gs.townhall_cord)
+                    gs.buildings_pos.remove(gs.town_hall_cord)
             elif building_targeted == "HUTS1":
                 gs.HUT_HEALTH[0] = gs.HUT_HEALTH[0] - gs.KING_ATTACK
                 if gs.HUT_HEALTH[0] < 0:
@@ -315,7 +315,7 @@ class King:
             elif building_targeted == "TH":
                 gs.TH_HEALTH = gs.TH_HEALTH - gs.KING_ATTACK
                 if gs.TH_HEALTH < 0:
-                    gs.buildings_pos.remove(gs.townhall_cord)
+                    gs.buildings_pos.remove(gs.town_hall_cord)
             elif building_targeted == "HUTS1":
                 gs.HUT_HEALTH[0] = gs.HUT_HEALTH[0] - gs.KING_ATTACK
                 if gs.HUT_HEALTH[0] < 0:

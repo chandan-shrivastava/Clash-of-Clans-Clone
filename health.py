@@ -1,3 +1,4 @@
+from time import sleep
 from colorama import init, Fore, Back, Style
 import global_stuff as gs
 from base import Base
@@ -188,11 +189,9 @@ class Health:
                //      ///////    ///////    ////////   ///////   ////////  //////// 
        """)
             print()
-            
-
             Get().show_cursor()
             exit()
-        if gs.building_alive == 0:
+        if gs.building_alive == 0 and gs.level==3:
             os.system("clear")
             os.system('aplay -q ./sounds/win.wav& 2>/dev/null')
             print(Fore.GREEN + r"""
@@ -206,3 +205,17 @@ class Health:
                          //      ///////    ///////    //       //   ///////   //      /// """)
             Get().show_cursor()
             exit()
+
+
+        if gs.building_alive == 0 and gs.level==2:
+            os.system("clear")
+            print("Moving to Level 3")
+            sleep(3)
+            gs.level = 3
+            gs.runonce3 = 0
+        if gs.building_alive == 0 and gs.level==1:
+            os.system("clear")
+            print("Moving to Level 2")
+            sleep(5)
+            gs.level = 2
+            gs.runonce2 = 0
