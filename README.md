@@ -16,6 +16,7 @@ d = move right
 h = heal spell
 r = rage spell
 i,o,p = spawn barbarians
+j,k,l = spawn archers
 q = quit
 ```
 

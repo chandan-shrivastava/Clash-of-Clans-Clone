@@ -17,6 +17,8 @@ KING_SPEED = 1
 HUT_HEALTH = [70, 70, 70, 70, 70]
 BARBARIAN_HEALTH = 50
 BARBARIAN_ATTACK = 20
+ARCHER_HEALTH=BARBARIAN_HEALTH/2
+ARCHER_ATTACK=BARBARIAN_ATTACK/2
 CANNON_ATTACK = 30
 CANNON1_HEALTH = 100
 CANNON2_HEALTH = 100
@@ -33,6 +35,8 @@ runonce3 = 1
 
 troops_pos = []
 troopss = []
+archer_pos = []
+archers = []
 buildings_pos = []
 town_hall_cord = []
 cannon1_cord = []

@@ -415,6 +415,13 @@ class Base:
         gs.building[10][45] = "SPAWN"
         gs.building[30][20] = "SPAWN"
         gs.building[41][50] = "SPAWN"
+        gs.board[10][90] = Fore.BLUE + "J"
+        gs.board[20][20] = Fore.BLUE + "K"
+        gs.board[41][30] = Fore.BLUE + "L"
+        gs.building[10][90] = "SPAWN"
+        gs.building[20][20] = "SPAWN"
+        gs.building[41][30] = "SPAWN"
+        
 
 
     def wizard_tower(self, no, color):

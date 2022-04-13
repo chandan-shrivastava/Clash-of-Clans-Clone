@@ -1,4 +1,4 @@
-from cProfile import run
+from archer import Archers
 from input import Get, input_to
 from colorama import init, Fore, Back, Style
 import os
@@ -22,6 +22,7 @@ king = King()
 cannon = Cannon()
 health = Health()
 wizard = Wizard()
+archers = Archers()
 
 
 for i in range(1000):
@@ -73,8 +74,7 @@ while True:
         gs.buildings_pos.append(gs.wiz1_cord)
         gs.buildings_pos.append(gs.wiz2_cord)
     elif gs.level == 2 and gs.runonce2 == 0:
-        # gs.board[gs.king_pos[0]][gs.king_pos[1]] = " "
-        # gs.building[gs.king_pos[0]][gs.king_pos[1]] = " "
+
         gs.runonce2 = 1
         gs.building_alive = 12
         base.townhall("GREEN")
@@ -121,7 +121,17 @@ while True:
         gs.buildings_pos.append(gs.wiz1_cord)
         gs.buildings_pos.append(gs.wiz2_cord)
         gs.buildings_pos.append(gs.wiz3_cord)
+        for i in gs.archer_pos:
+            gs.board[i[0]][i[1]] = " "
+        for i in gs.troops_pos:
+            gs.board[i[0]][i[1]] = " "
+        gs.board[gs.king_pos[0]][gs.king_pos[1]] = " "
+        gs.building[gs.king_pos[0]][gs.king_pos[1]] = " "
 
+        gs.troops_pos = []
+        gs.troopss = []
+        gs.archer_pos = []
+        gs.archers = []
         gs.king_pos = [25, 26]
         gs.cannon1_pos = [25, 35]
         gs.cannon2_pos = [25, 71]
@@ -218,7 +228,13 @@ while True:
         gs.buildings_pos.append(gs.wiz2_cord)
         gs.buildings_pos.append(gs.wiz3_cord)
         gs.buildings_pos.append(gs.wiz4_cord)
-        
+        for i in gs.archer_pos:
+            gs.board[i[0]][i[1]] = " "
+        for i in gs.troops_pos:
+            gs.board[i[0]][i[1]] = " "
+        gs.board[gs.king_pos[0]][gs.king_pos[1]] = " "
+        gs.building[gs.king_pos[0]][gs.king_pos[1]] = " "
+
         gs.king_pos = [25, 26]
         gs.cannon1_pos = [25, 35]
         gs.cannon2_pos = [25, 71]
@@ -228,46 +244,16 @@ while True:
         gs.wiz2_pos = [35, 61]
         gs.wiz3_pos = [15, 44]
         gs.wiz4_pos = [35, 41]
-        gs.hut1_pos = [15, 71]
-        gs.TH_HEALTH = 150
-        gs.KING_ATTACK = 30
-        gs.KING_HEALTH = 1000
-        gs.KING_SPEED = 1
-        gs.HUT_HEALTH = [70, 70, 70, 70, 70]
-        gs.BARBARIAN_HEALTH = 50
-        gs.BARBARIAN_ATTACK = 20
-        gs.CANNON_ATTACK = 30
-        gs.CANNON1_HEALTH = 100
-        gs.CANNON2_HEALTH = 100
-        gs.CANNON3_HEALTH = 100
-        gs.CANNON4_HEALTH = 100
-        gs.WIZARD_ATTACK = 30
-        gs.WIZARD_HEALTH = [100, 100, 100, 100]
-        gs.th_destroyed = 0
-        gs.cannon1_destroyed = 0
-        gs.cannon2_destroyed = 0
-        gs.cannon3_destroyed = 0
-        gs.cannon4_destroyed = 0
-        gs.hut_destroyed1 = 0
-        gs.hut_destroyed2 = 0
-        gs.hut_destroyed3 = 0
-        gs.hut_destroyed4 = 0
-        gs.hut_destroyed5 = 0
-        gs.wiz_destroyed1 = 0
-        gs.wiz_destroyed2 = 0
-        gs.wiz_destroyed3 = 0
-        gs.wiz_destroyed4 = 0
-        gs.king_destroyed = 0
-        gs.BARBARIAN_COUNT = 0
-        gs.ARCHER_COUNT = 0
-        gs.BALLOON_COUNT = 0
-
+        gs.hutspawn(inp)
+        gs.archers.append(T)
 
     inp = input_to(Get())
     health.check_health()
     cannon.attack()
     wizard.attack()
     for i in gs.troopss:
+        i.move()
+    for i in gs.archers:
         i.move()
     if inp == None:
         pass
@@ -291,6 +277,11 @@ while True:
         T = Troops()
         T.spawn(inp)
         gs.troopss.append(T)
+    elif inp == "j" or inp == "k" or inp == "l":
+        file1.write(inp + "\n")
+        T = Archers()
+        T.spawn(inp)
+        gs.archers.append(T)
     elif inp == "q" or inp == "Q":
         file1.write(inp + "\n")
         Get().show_cursor()
