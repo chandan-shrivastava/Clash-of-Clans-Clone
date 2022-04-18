@@ -25,8 +25,10 @@ health = Health()
 wizard = Wizard()
 archers = Archers()
 ballons = Balloons()
-
-ki = int(input("Press 1 for King, Press 2 for Queen"))
+try:
+    ki = int(input("Press 1 for King, Press 2 for Queen and press enter \n"))
+except:
+    exit()
 for i in range(1000):
     if os.path.exists("replays/no" + str(i)):
         continue
