@@ -25,16 +25,17 @@ health = Health()
 wizard = Wizard()
 archers = Archers()
 ballons = Balloons()
-try:
-    ki = int(input("Press 1 for King, Press 2 for Queen and press enter \n"))
-except:
-    exit()
 for i in range(1000):
     if os.path.exists("replays/no" + str(i)):
         continue
     else:
         file1 = open("replays/no" + str(i), "a")
         break
+try:
+    ki = int(input("Press 1 for King, Press 2 for Queen and press enter \n"))
+    file1.write(str(ki) + "\n")
+except:
+    exit()
 while True:
     if gs.level == 1 and gs.runonce1 == 0:
         gs.runonce1 = 1
@@ -300,6 +301,7 @@ while True:
         T.spawn(inp)
         gs.archers.append(T)
     elif inp == "b" or inp == "n" or inp == "m":
+        file1.write(inp + "\n")
         T = Balloons()
         T.spawn(inp)
         gs.balloons.append(T)
