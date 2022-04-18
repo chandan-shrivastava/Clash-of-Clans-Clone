@@ -421,6 +421,12 @@ class Base:
         gs.building[10][90] = "SPAWN"
         gs.building[20][20] = "SPAWN"
         gs.building[41][30] = "SPAWN"
+        gs.board[10][72] = Fore.BLUE + "B"
+        gs.board[25][20] = Fore.BLUE + "N"
+        gs.board[41][40] = Fore.BLUE + "M"
+        gs.building[10][72] = "SPAWN"
+        gs.building[25][20] = "SPAWN"
+        gs.building[41][40] = "SPAWN"
         
 
 

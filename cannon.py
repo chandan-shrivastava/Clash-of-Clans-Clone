@@ -1,10 +1,11 @@
 from time import sleep
 from colorama import init, Fore, Back, Style
+from building import Buildings
 import global_stuff as gs
 from troops import Troops
 import os
 init()
-class Cannon:
+class Cannon(Buildings):
     def attack(self):
         if gs.CANNON1_HEALTH > 0:
             x1=gs.cannon1_pos[0]
@@ -54,8 +55,8 @@ class Cannon:
                 os.system('aplay -q ./sounds/bullet.wav& 2>/dev/null')
                 gs.KING_HEALTH = gs.KING_HEALTH - gs.CANNON_ATTACK
             for trp in gs.troopss:
-                x1=gs.cannon1_pos[0]
-                x2=gs.cannon1_pos[1]
+                x1=gs.cannon2_pos[0]
+                x2=gs.cannon2_pos[1]
                 y1=trp.x
                 y2=trp.y
                 distance = abs(x1 - y1) + abs(x2 - y2)
@@ -67,8 +68,8 @@ class Cannon:
                         gs.troops_pos.remove(trp)
                     gs.board[trp.x][trp.y] = Fore.WHITE + " "
             for trp in gs.archers:
-                x1=gs.cannon1_pos[0]
-                x2=gs.cannon1_pos[1]
+                x1=gs.cannon2_pos[0]
+                x2=gs.cannon2_pos[1]
                 y1=trp.x
                 y2=trp.y
                 distance = abs(x1 - y1) + abs(x2 - y2)

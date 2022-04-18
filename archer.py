@@ -37,7 +37,7 @@ class Archers:
                             distance = abs(trp[0] - p[0]) + abs(trp[1] - p[1])
                             destination = p
                 if distance != 5001:
-                    if distance == 4: 
+                    if distance <= 4: 
                         if gs.building[destination[0]][destination[1]] == "CANNON1":
                             gs.CANNON1_HEALTH = gs.CANNON1_HEALTH - self.attack
                         elif gs.building[destination[0]][destination[1]] == "CANNON2":

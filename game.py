@@ -1,4 +1,5 @@
 from archer import Archers
+from balloon import Balloons
 from input import Get, input_to
 from colorama import init, Fore, Back, Style
 import os
@@ -16,15 +17,16 @@ init()
 
 Get().hide_cursor()
 os.system("clear")
-
+last_direction = "w"
 base = Base()
 king = King()
 cannon = Cannon()
 health = Health()
 wizard = Wizard()
 archers = Archers()
+ballons = Balloons()
 
-
+ki = int(input("Press 1 for King, Press 2 for Queen"))
 for i in range(1000):
     if os.path.exists("replays/no" + str(i)):
         continue
@@ -123,6 +125,8 @@ while True:
         gs.buildings_pos.append(gs.wiz3_cord)
         for i in gs.archer_pos:
             gs.board[i[0]][i[1]] = " "
+        for i in gs.balloon_pos:
+            gs.board[i[0]][i[1]] = " "
         for i in gs.troops_pos:
             gs.board[i[0]][i[1]] = " "
         gs.board[gs.king_pos[0]][gs.king_pos[1]] = " "
@@ -131,7 +135,9 @@ while True:
         gs.troops_pos = []
         gs.troopss = []
         gs.archer_pos = []
+        gs.balloon_pos = []
         gs.archers = []
+        gs.balloons = []
         gs.king_pos = [25, 26]
         gs.cannon1_pos = [25, 35]
         gs.cannon2_pos = [25, 71]
@@ -230,6 +236,8 @@ while True:
         gs.buildings_pos.append(gs.wiz4_cord)
         for i in gs.archer_pos:
             gs.board[i[0]][i[1]] = " "
+        for i in gs.balloon_pos:
+            gs.board[i[0]][i[1]] = " "
         for i in gs.troops_pos:
             gs.board[i[0]][i[1]] = " "
         gs.board[gs.king_pos[0]][gs.king_pos[1]] = " "
@@ -244,8 +252,6 @@ while True:
         gs.wiz2_pos = [35, 61]
         gs.wiz3_pos = [15, 44]
         gs.wiz4_pos = [35, 41]
-        gs.hutspawn(inp)
-        gs.archers.append(T)
 
     inp = input_to(Get())
     health.check_health()
@@ -255,23 +261,32 @@ while True:
         i.move()
     for i in gs.archers:
         i.move()
+    for i in gs.balloons:
+        i.move()
     if inp == None:
         pass
     elif inp == "w" or inp == "W":
+        last_direction = "w"
         file1.write(inp + "\n")
         king.movement("UP")
     elif inp == "a" or inp == "A":
+        last_direction = "a"
         file1.write(inp + "\n")
         king.movement("LEFT")
     elif inp == "s" or inp == "S":
+        last_direction = "s"
         file1.write(inp + "\n")
         king.movement("DOWN")
     elif inp == "d" or inp == "D":
+        last_direction = "d"
         file1.write(inp + "\n")
         king.movement("RIGHT")
+    elif inp == " " and ki == 1:
+        file1.write(inp + "\n")
+        king.attack(ki,last_direction)
     elif inp == " ":
         file1.write(inp + "\n")
-        king.attack()
+        king.attack(ki,last_direction)
     elif inp == "i" or inp == "o" or inp == "p":
         file1.write(inp + "\n")
         T = Troops()
@@ -282,6 +297,10 @@ while True:
         T = Archers()
         T.spawn(inp)
         gs.archers.append(T)
+    elif inp == "b" or inp == "n" or inp == "m":
+        T = Balloons()
+        T.spawn(inp)
+        gs.balloons.append(T)
     elif inp == "q" or inp == "Q":
         file1.write(inp + "\n")
         Get().show_cursor()
@@ -293,8 +312,12 @@ while True:
         spel = Spell()
         spel.cast(inp)
     os.system("clear")
-
+    # print(gs.board[gs.king_pos[0]][gs.king_pos[1]])
     for x in gs.board:
         for i in x:
-            print(i, end=" ")
+            if(i == Fore.WHITE + "K" and ki == 2):
+                print(Fore.WHITE + "Q",end=" ")
+            else:
+                print(i, end=" ")
         print()
+    # print(gs.board[gs.king_pos[0]][gs.king_pos[1]])
