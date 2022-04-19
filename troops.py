@@ -9,7 +9,7 @@ class Troops:
         self.y = 0
     def spawn(self,inp):
         gs.BARBARIAN_COUNT = gs.BARBARIAN_COUNT + 1
-        if gs.BARBARIAN_COUNT >= 5:
+        if gs.BARBARIAN_COUNT >= 10:
             pass
         elif inp == "i":
             gs.troops_pos.append([11,45])

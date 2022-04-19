@@ -9,7 +9,7 @@ class Balloons:
         self.y = 0
     def spawn(self,inp):
         gs.BALLOON_COUNT = gs.BALLOON_COUNT + 1
-        if gs.BALLOON_COUNT >= 15:
+        if gs.BALLOON_COUNT >= 10:
             pass
         elif inp == "b":
             gs.balloon_pos.append([10,71])

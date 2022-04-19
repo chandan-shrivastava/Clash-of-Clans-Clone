@@ -9,7 +9,7 @@ class Archers:
         self.y = 0
     def spawn(self,inp):
         gs.ARCHER_COUNT = gs.ARCHER_COUNT + 1
-        if gs.ARCHER_COUNT >= 15:
+        if gs.ARCHER_COUNT >= 10:
             pass
         elif inp == "j":
             gs.archer_pos.append([10,89])
