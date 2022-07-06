@@ -1,12 +1,16 @@
 # Clash of Clans Clone
 
+• The game is the terminal version of Clash of Clans game.  
+• King and Queen are operated by the user/player.  
+• The Barbarians, Balloon and Archers attacks automatically by finding the nearest building using some algorithms.
+
 ## How to run:
 
 ```bash
 python3 main.py
 ```
 
-## How to play:
+## Controls:
 
 ```
 w = move up
